@@ -1,0 +1,13 @@
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/json-1.8.6/ext/json
+/usr/local/rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20180828-7801-u967bx.rb extconf.rb
+creating Makefile
+
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install

@@ -1,0 +1,28 @@
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/mysql-2.9.1/ext/mysql_api
+/usr/local/rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20180828-20946-kcfo6b.rb extconf.rb
+checking for mysql_ssl_set()... yes
+checking for rb_str_set_len()... yes
+checking for rb_thread_start_timer()... no
+checking for mysql.h... yes
+creating Makefile
+
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/mysql-2.9.1/ext/mysql_api
+make "DESTDIR=" clean
+
+current directory: /home/oldbones/open-source-billing/vendor/bundle/ruby/2.5.0/gems/mysql-2.9.1/ext/mysql_api
+make "DESTDIR="
+compiling mysql.c
+mysql.c: In function ‘stmt_bind_result’:
+mysql.c:1320:74: error: ‘rb_cFixnum’ undeclared (first use in this function); did you mean ‘rb_isalnum’?
+  else if (argv[i] == rb_cNumeric || argv[i] == rb_cInteger || argv[i] == rb_cFixnum)
+                                                                          ^~~~~~~~~~
+                                                                          rb_isalnum
+mysql.c:1320:74: note: each undeclared identifier is reported only once for each function it appears in
+mysql.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+Makefile:241: recipe for target 'mysql.o' failed
+make: *** [mysql.o] Error 1
+
+make failed, exit code 2

@@ -1,0 +1,25 @@
+<tr class="fields nested-fields line-items-fields">
+  <td>
+    <div class="elementsAction">
+      <%= link_to_remove_association raw('<i class="material-icons close">close</i>'), f, class: 'remove_item remove_nested_fields removeItem cross-position' %>
+    </div>
+  </td>
+  <td>
+    <%= f.input :item_id, collection: (load_line_items(action_name, @estimate.company_id, f.object) << ['Add New', '-1']),
+                selected: f.object.item_id, prompt: t('views.common.select_item'), label: false, wrapper: false,
+                include_blank: false, input_html: { class: 'items_list inline-select title-select add_link_select',
+                                                    data: {action_path: new_item_path, position: (count rescue 0)} } %>
+
+  </td>
+  <%= f.input :item_name, as: :hidden, input_html: { class: 'item_name' }, label: false, wrapper: false %>
+  <td><%= f.input :item_description, input_html: { class: 'description' }, label: false, wrapper: false %></td>
+  <td><%= f.input :item_unit_cost, input_html: { class: 'cost center-align' }, label: false, wrapper: false %></td>
+  <td><%= f.input :item_quantity, input_html: { class: 'qty center-align', min: 1 }, label: false, wrapper: false %></td>
+
+  <%= f.input :tax_1, as: :hidden, input_html: {class: 'tax1'}, label: false, wrapper: false %>
+  <%= hidden_field_tag :tax_amount, f.object.tax1.try(:percentage), class: 'tax-amount' %>
+  <td class="center-align tax1">
+    <%= f.object.tax1.name rescue '' %>
+  </td>
+  <td class="right-align"><%= label_tag 'line total', '0.00', :class => 'blank_input grid_medium line_total' %></td>
+</tr>
